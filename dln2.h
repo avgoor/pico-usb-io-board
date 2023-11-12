@@ -52,7 +52,7 @@ struct dln2_response {
 
 struct dln2_slot {
     uint8_t data[DLN2_BUF_SIZE];
-    uint index;
+    unsigned int index;
     size_t len;
     struct dln2_slot *next;
 };
@@ -138,7 +138,7 @@ static inline void put_unaligned_le16(uint16_t val, void *p)
 #define DLN2_CMD(cmd, id)       ((cmd) | ((id) << 8))
 
 #define dln2_print_slot(slot)   _dln2_print_slot(slot, 0, __func__)
-void _dln2_print_slot(struct dln2_slot *slot, uint indent, const char *caller);
+void _dln2_print_slot(struct dln2_slot *slot, unsigned int indent, const char *caller);
 
 struct dln2_slot *dln2_get_slot(void);
 void dln2_queue_slot_in(struct dln2_slot *slot);

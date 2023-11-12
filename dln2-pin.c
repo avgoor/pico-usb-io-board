@@ -61,7 +61,7 @@ uint16_t dln2_pin_free(uint16_t pin, uint8_t module)
 
 void dln2_pin_set_available(uint32_t mask)
 {
-    for (uint i = 0; i < DLN2_PIN_MAX; i++) {
+    for (uint32_t i = 0; i < DLN2_PIN_MAX; i++) {
         if (!(mask & 1))
             dln2_pin_states[i].module = DLN2_PIN_NOT_AVAILABLE;
         mask >>= 1;

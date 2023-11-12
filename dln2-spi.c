@@ -15,6 +15,7 @@
 #include "hardware/clocks.h"
 #include "hardware/gpio.h"
 #include "hardware/spi.h"
+#include "pico/stdlib.h"
 
 #define LOG1    //printf
 

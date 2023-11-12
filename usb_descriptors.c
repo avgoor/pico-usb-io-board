@@ -64,7 +64,7 @@ uint8_t const *tud_descriptor_device_cb(void)
         .bDescriptorType = TUSB_DESC_ENDPOINT,                      \
         .bEndpointAddress = _addr,                                  \
         .bmAttributes = TUSB_XFER_BULK,                             \
-        .wMaxPacketSize.size = CFG_DLN2_BULK_ENPOINT_SIZE,          \
+        .wMaxPacketSize = CFG_DLN2_BULK_ENPOINT_SIZE,               \
         .bInterval = 0,                                             \
     }
 
@@ -73,8 +73,8 @@ typedef struct TU_ATTR_PACKED {
     tusb_desc_interface_t dln_interface;
     tusb_desc_endpoint_t dln_bulk_out;
     tusb_desc_endpoint_t dln_bulk_in;
-    u_int8_t cdc1_ifce_desc[TUD_CDC_DESC_LEN];
-    u_int8_t cdc2_ifce_desc[TUD_CDC_DESC_LEN];
+    uint8_t cdc1_ifce_desc[TUD_CDC_DESC_LEN];
+    uint8_t cdc2_ifce_desc[TUD_CDC_DESC_LEN];
 } config_descriptor_t;
 
 static config_descriptor_t config_descriptor = {
